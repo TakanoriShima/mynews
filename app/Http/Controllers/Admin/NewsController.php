@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\History;
+use App\Models\Profile;
 use Carbon\Carbon;
 
 class NewsController extends Controller
@@ -42,7 +43,7 @@ class NewsController extends Controller
         $news->fill($form);
         $news->save();
 
-        return redirect('admin/news/create');
+        return redirect('admin/news');
     }  
     
     // 以下を追記
@@ -115,4 +116,13 @@ class NewsController extends Controller
 
         return redirect('admin/news/');
     }    
+    
+    
+    public function profile(Request $request){
+
+        $profile = Profile::first();
+
+        return view('admin.news.profile', ['profile' => $profile]);
+
+    }
 }
