@@ -11,9 +11,5 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     
-    // 以下を追記
-    public function add()
-    {
-        return view('admin.news.create');
-    }    
+  
 }

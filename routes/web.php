@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::controller(NewsController::class)->prefix('admin')->group(function() {
     Route::get('news/create', 'add');
 });
+
